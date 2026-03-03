@@ -185,6 +185,30 @@ numbers = {
         CONF_DATA: fsv_numeric_data(1052, 30, 40),
         CONF_DEFAULTS: temperature_defaults()
     },
+    0x431E: {
+        NASA_LABEL: "VAR_IN_FSV_1061",
+        NASA_MODE: CONTROLLER_MODE_FSV,
+        CONF_DATA: fsv_numeric_data(1061, 0, 7, 0.5),
+        CONF_DEFAULTS: temperature_defaults()
+    },
+    0x431F: {
+        NASA_LABEL: "VAR_IN_FSV_1062",
+        NASA_MODE: CONTROLLER_MODE_FSV,
+        CONF_DATA: fsv_numeric_data(1062, 1, 7, 0.5),
+        CONF_DEFAULTS: temperature_defaults()
+    },
+    0x4320: {
+        NASA_LABEL: "VAR_IN_FSV_1063",
+        NASA_MODE: CONTROLLER_MODE_FSV,
+        CONF_DATA: fsv_numeric_data(1063, 0, 7, 0.5),
+        CONF_DEFAULTS: temperature_defaults()
+    },
+    0x4321: {
+        NASA_LABEL: "VAR_IN_FSV_1064",
+        NASA_MODE: CONTROLLER_MODE_FSV,
+        CONF_DATA: fsv_numeric_data(1064, 1, 7, 0.5),
+        CONF_DEFAULTS: temperature_defaults()
+    },
     0x4254: {
         NASA_LABEL: "VAR_IN_FSV_2011",
         NASA_MODE: CONTROLLER_MODE_FSV,
