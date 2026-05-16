@@ -27,6 +27,7 @@ CLIMATE_ACTION = {
     "CLIMATE_ACTION_OFF": ClimateAction.CLIMATE_ACTION_OFF,
     "CLIMATE_ACTION_COOLING": ClimateAction.CLIMATE_ACTION_COOLING,
     "CLIMATE_ACTION_HEATING": ClimateAction.CLIMATE_ACTION_HEATING,
+    "CLIMATE_ACTION_DEFROSTING": ClimateAction.CLIMATE_ACTION_DEFROSTING,
     "CLIMATE_ACTION_IDLE": ClimateAction.CLIMATE_ACTION_IDLE
 }
 
@@ -95,7 +96,11 @@ CLIMATE_ACTION_SCHEMA = cv.Schema(
     }
 )
 
-@automation.register_action("climate.action", ClimateSetAction, CLIMATE_ACTION_SCHEMA)
+@automation.register_action(
+        "climate.action", 
+        ClimateSetAction, 
+        CLIMATE_ACTION_SCHEMA,
+        synchronous=False)
 async def climate_action_to_code(config, action_id, template_arg, args):
     paren = await cg.get_variable(config[CONF_ID])
     var = cg.new_Pvariable(action_id, template_arg, paren)
